@@ -1,0 +1,36 @@
+*** utility.c.orig  crc=35187   3831	Wed Mar  4 19:31:20 2020
+--- utility.c  crc=25038   4269	Thu Mar  5 22:53:01 2020
+***************
+*** 1,4 ****
+! /* This file contains some utility routines for MM.
+   *
+   * The entry points are:
+   *   allowed:	see if an access is permitted
+--- 1,4 ----
+! /* This file contains some utility routines for MM. 
+   *
+   * The entry points are:
+   *   allowed:	see if an access is permitted
+***************
+*** 112,114 ****
+--- 112,131 ----
+    m.m1_i3 = p3;
+    _taskcall(FS_PROC_NR, what, &m);
+  }
++ 
++ /*========================================================================*
++  *				do_mycall()                               *
++  *========================================================================*/
++ PUBLIC int do_mycall()
++ {
++ 	int a, b;	
++ 
++ 	a = mm_in.m1_i1;
++ 	b = mm_in.m1_i2;
++ 
++ 	mproc[mm_in.m_source].mp_reply.m1_i1 = a + b;
++ 	mproc[mm_in.m_source].mp_reply.m1_i2 = a - b;
++ 	mproc[mm_in.m_source].mp_reply.m1_i3 = a * b;
++ 	 
++ 	return OK;
++ }

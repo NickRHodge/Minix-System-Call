@@ -1,0 +1,9 @@
+*** proto.h.orig  crc=05280   2675	Sun Mar  1 19:31:32 2020
+--- proto.h  crc=53060   2716	Sun Mar  1 20:27:15 2020
+***************
+*** 77,79 ****
+--- 77,80 ----
+  _PROTOTYPE( int no_sys, (void)						);
+  _PROTOTYPE( void panic, (char *format, int num)				);
+  _PROTOTYPE( void tell_fs, (int what, int p1, int p2, int p3)		);
++ _PROTOTYPE( int do_mycall, (void)					);

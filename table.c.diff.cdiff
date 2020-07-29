@@ -1,0 +1,30 @@
+*** table.c.orig  crc=45242   2775	Sun Mar  1 19:31:47 2020
+--- table.c  crc=42117   2776	Sun Mar  1 18:49:33 2020
+***************
+*** 72,84 ****
+  	no_sys,		/* 55 = fcntl	*/
+  	no_sys,		/* 56 = (mpx)	*/
+  	no_sys,		/* 57 = unused	*/
+! 	no_sys,		/* 58 = unused	*/
+  	do_exec,	/* 59 = execve	*/
+  	no_sys,		/* 60 = umask	*/
+  	no_sys,		/* 61 = chroot	*/
+  	do_getset,	/* 62 = setsid	*/
+  	do_getset,	/* 63 = getpgrp	*/
+- 
+  	do_ksig,	/* 64 = KSIG: signals originating in the kernel	*/
+  	no_sys,		/* 65 = UNPAUSE	*/
+  	no_sys, 	/* 66 = unused  */
+--- 72,83 ----
+  	no_sys,		/* 55 = fcntl	*/
+  	no_sys,		/* 56 = (mpx)	*/
+  	no_sys,		/* 57 = unused	*/
+! 	do_mycall,	/* 58 = unused	*/
+  	do_exec,	/* 59 = execve	*/
+  	no_sys,		/* 60 = umask	*/
+  	no_sys,		/* 61 = chroot	*/
+  	do_getset,	/* 62 = setsid	*/
+  	do_getset,	/* 63 = getpgrp	*/
+  	do_ksig,	/* 64 = KSIG: signals originating in the kernel	*/
+  	no_sys,		/* 65 = UNPAUSE	*/
+  	no_sys, 	/* 66 = unused  */
